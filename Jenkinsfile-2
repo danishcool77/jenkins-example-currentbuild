@@ -4,11 +4,13 @@ pipeline {
     stage('Hello') {
       steps {
         sh 'echo Hello World'
+        echo 1 currentBuild.currentResult
       }
       post {
         success {
           script {
             currentBuild.result = 'FAILURE'
+            echo 2 currentBuild.currentResult
           }
         }
       }
@@ -16,7 +18,8 @@ pipeline {
   }
   post {
     always {
-      echo currentBuild.currentResult
+      echo 3 currentBuild.currentResult
+       echo 4 currentBuild.result
     }
   }
 }
