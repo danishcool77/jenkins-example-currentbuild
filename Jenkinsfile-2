@@ -20,7 +20,7 @@ pipeline {
   post {
     always {
       echo "3 ${currentBuild.currentResult}"
-       echo "4 ${currentBuild.result}
+       echo "4 ${currentBuild.result}"
     }
   }
 }
